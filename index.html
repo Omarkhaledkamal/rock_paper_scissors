@@ -7,18 +7,92 @@
   <link rel="stylesheet" href="./style.css">
   <script>
     const a = "rock", b = "paper", c ="scissors";
+    let humanScore = 0, computerScore = 0;
+    // computer choice
     function getComputerChoice() {
       let random = Math.floor(Math.random() * 3);
-      if (random == 0) return a;
-      else if (random == 1) return b;
-      else return c;
+      switch (random) {
+        case 0:
+          return a;
+        case 1: 
+          return b;
+        case 2: 
+          return c;
+      }
     }
-    console.log(getComputerChoice());
+    
+    function getHumanChoice() {
+      let choice = prompt("Enter Your Choice:");
+      choice = choice.toLowerCase();
+      return choice;
+    }
+    
+    
+
+    // Entire Game
+    function playGame() {
+      function playRound() {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        if (humanChoice == a){
+          if (computerChoice == b) {
+            computerScore++;
+            console.log("You Lose! Paper Beats Rock" + ` Your Score: ${humanScore}, Computer Score: ${computerScore}`);
+          }
+          else if (computerChoice == c) {
+            humanScore++;
+            console.log("You Win! Rock Beats Scissors" + ` Your Score: ${humanScore}, Computer Score: ${computerScore}`);
+          }
+          else {
+            console.log("Draw");
+          }
+        }
+
+        else if (humanChoice == b) {
+          if (computerChoice == a) {
+            humanScore++;
+            console.log("You Win! Paper Beats Rock" + ` Your Score: ${humanScore}, Computer Score: ${computerScore}`) ;
+          }
+          else if (computerChoice == c) {
+            computerScore++;
+            console.log("You Lose! Scissors Beats Paper" + ` Your Score: ${humanScore}, Computer Score: ${computerScore}`);
+          }
+          else {
+            console.log("Draw");
+          }
+        }
+
+        else if (humanChoice == c) {
+          if (computerChoice == a) {
+            computerScore++;
+            console.log("You Lose! Rock Beats Scissors" + ` Your Score: ${humanScore}, Computer Score: ${computerScore}`);
+          }
+          else if (computerChoice == b) {
+            humanScore++;
+            console.log("You Win! Scissors Beats Paper" + ` Your Score: ${humanScore}, Computer Score: ${computerScore}`);
+          }
+          else {
+            console.log("Draw");
+          }
+        }
+      }
+      
+      for (let i = 0; i < 5; i++)
+      {
+        playRound();
+      }
+
+      if (humanScore > computerScore) {
+        console.log (`Game Over ! You Win The Game With A Score Of ${humanScore}, Computer Score ${computerScore}.`);
+      }
+      else {
+        console.log(`Game Over ! You Lose The Game With A Score Of ${humanScore}, Computer Score ${computerScore}`);
+      }
+    }
   </script>
 </head>
-<body>
+<body style="background-color: #eee;">
   <h1>Rock Paper Scissors Game !</h1>
   <p>Play Through The Console !</p>
-  <p>Note: Refresh The Page To Play Again !</p>
 </body>
 </html>

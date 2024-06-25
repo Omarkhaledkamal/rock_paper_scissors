@@ -4,4 +4,6 @@ body {
   justify-content: center;
   height: 100vh;
   flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
 }
