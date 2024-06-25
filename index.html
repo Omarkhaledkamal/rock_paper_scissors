@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="./style.css">
+  <script>
+    const a = "rock", b = "paper", c ="scissors";
+    function getComputerChoice() {
+      let random = Math.floor(Math.random() * 3);
+      if (random == 0) return a;
+      else if (random == 1) return b;
+      else return c;
+    }
+    console.log(getComputerChoice());
+  </script>
+</head>
+<body>
+  <h1>Rock Paper Scissors Game !</h1>
+  <p>Play Through The Console !</p>
+  <p>Note: Refresh The Page To Play Again !</p>
+</body>
+</html>
