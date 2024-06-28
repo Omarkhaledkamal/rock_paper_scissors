@@ -5,7 +5,7 @@
 body {
   display: flex;
   align-items: center;
-  height: 100vh;
+  flex-basis: 100vh;
   flex-direction: column;
   box-sizing: border-box;
   margin: 0;
@@ -29,15 +29,14 @@ button:hover {
   background-color: hsl(180, 100%, 30%);
 }
 
-div {
+.button-container {
   display: flex;
   width: 1120px;
   justify-content: space-around;
-  align-items: center;
-  height: 500px;
+  height: fit-content;
 }
 
-p {
+.scores p {
   font-size: 20px;
   width: fit-content;
   padding: 20px;
@@ -45,4 +44,20 @@ p {
 
 .score-container {
   height: 100px;
+  width: 1120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-around;
+}
+
+.round-details {
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
 }
