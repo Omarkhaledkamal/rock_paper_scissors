@@ -1,51 +1,38 @@
-/* Rock paper scissors game */
-const rock = "rock", paper = "paper", scissors = "scissors";
+// بسم الله الرحمن الرحيم
 
-// get the computer choice 
+// first add the options
+const a = 'rock', b = 'paper', c = 'scissors';
+
+// get computer choice
 function getComputerChoice() {
-  let random =  Math.floor(Math.random() * 3);
-  switch (random) {
-    case 0: 
-      return rock;
-    case 1: 
-      return paper;
-    case 2: 
-      return scissors;
+  let choice = Math.floor(Math.random() * 3);
+  switch (choice) {
+    case 0:
+      return a;
+    case 1:
+      return b;
+    case 2:
+      return c;
   }
 }
-// --------------------------------------------
+let computerChoice = getComputerChoice();
+// done
 
-// get human choice 
-function getHumanChoice() {
-  let choice = '';
-  do {
-    choice = prompt("Enter Your Choice: ")
-  } while (choice == '');
-  return choice.toLowerCase();
-}
-// ---------------------------------------------
+// get human choice
 
-let humanScore = 0, computerScore = 0;
-function playRound() {
-  let humanChoice = getHumanChoice(), computerChoice = getComputerChoice();
-  if (humanChoice == computerChoice) {
-    console.log("Draw");
-  } else if ( humanChoice == rock && computerChoice == scissors || humanChoice == scissors && computerChoice == paper  || humanChoice == paper && computerChoice == rock) { 
-    console.log(`You Win! Your Score is ${++humanScore}, Computer Score is ${computerScore}`);
+const buttonContainer = document.querySelector(".button-container");
+buttonContainer.addEventListener("click", (e) => {
+  let humanChoice, computerChoice = getComputerChoice();
+  let target = e.target;
+  switch (target.id) {
+    case 'rock':
+      humanChoice = a;
+      break;
+    case 'paper':
+      humanChoice = b;
+      break;
+    case 'scissors':
+      humanChoice = c;
+      break;
   }
-  else {
-    console.log(`You Lose! Your Score is ${humanScore}, Computer Score is ${++computerScore}`);
-  }
-}
-
-function playGame(rounds) {
-  for (let i = 0; i < rounds; i++) {
-    playRound();
-  }
-  if (humanScore > computerScore) {
-    console.log(`Game Over, You Win! Your Total Score is ${humanScore}, Computer Total Score is ${computerScore}`);
-  }
-  else {
-    console.log(`Game Over, Computer Wins! Your Total Score is ${humanScore}, Computer Total Score is ${computerScore}`);
-  }
-}
+})

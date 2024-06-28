@@ -1,9 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   flex-direction: column;
   box-sizing: border-box;
   margin: 0;
+  background-color: #eee;
+}
+
+button {
+  background-color: cyan;
+  color: white;
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(180, 100%, 30%);
+}
+
+div {
+  display: flex;
+  width: 1120px;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+}
+
+p {
+  font-size: 20px;
+  width: fit-content;
+  padding: 20px;
+}
+
+.score-container {
+  height: 100px;
 }
