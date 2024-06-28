@@ -1,3 +1,3 @@
 # rock_paper_scissors
-This is a rock paper scissors game , played entirely through the developer tools console,
-i will come back to it , to give it some GUI to make it look appealing and good !
+This is A Simple Rock Paper Scissors Game, you can play it via the ui ,
+first to 5 wins ,it's you against the computer, refresh the page to play again! 
